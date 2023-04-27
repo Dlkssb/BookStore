@@ -14,7 +14,7 @@ namespace BookStore.Domin.Entity
         public bool Is_Available { get; set; } 
 
         public decimal Price { get; set; }
-        public Guid ShelfShelfId { get; set; }
+        public Guid ShelfId { get; set; }
         public Shelf Shelf { get; set; }
     }
 }

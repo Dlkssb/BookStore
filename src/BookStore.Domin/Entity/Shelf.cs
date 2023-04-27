@@ -10,7 +10,7 @@ namespace BookStore.Domin.Entity
     public class Shelf :EntityBase
     {
         public Guid RackId { get; set; }
-        public  Rack Racks { get; set; }
+        public  Rack Rack { get; set; }
 
         public List<Book> Books { get; set; }
     }
