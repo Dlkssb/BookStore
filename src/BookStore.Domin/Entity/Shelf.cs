@@ -1,17 +1,23 @@
 ﻿using BookStore.Domin.Commen;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BookStore.Domin.Entity
 {
-    public class Shelf :EntityBase
+    // Shelf entity
+    public class Shelf
     {
-        public Guid RackId { get; set; }
+        [Key]
+        public int Id { get; set; }
+        public int Code { get; set; }
+        
+        public int RackId { get; set; }
         public  Rack Rack { get; set; }
-
-        public List<Book> Books { get; set; }
+        public  ICollection<Book> Books { get; set; }
     }
 }

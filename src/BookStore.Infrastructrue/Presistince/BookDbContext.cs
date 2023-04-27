@@ -1,26 +1,25 @@
 ﻿using BookStore.Domin.Entity;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+
 
 namespace BookStore.Infrastructrue.Presistince
 {
-    public class BookDbContext :DbContext
+    public class BookDbContext : DbContext
     {
 
-        public BookDbContext(DbContextOptions<BookDbContext> options):base(options)
+       
+        public BookDbContext(DbContextOptions<BookDbContext> options) : base(options)
         {
 
         }
 
-      public  DbSet<Book> Books { get; set; }
+        
 
-        public  DbSet<Shelf> Shelves { get; set; }
-        public  DbSet<Rack> Racks { get; set; }
+        public DbSet<Book> Books { get; set; }
 
+        public DbSet<Shelf> Shelves { get; set; }
+        public DbSet<Rack> Racks { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -31,12 +30,15 @@ namespace BookStore.Infrastructrue.Presistince
 
             modelBuilder.Entity<Book>().HasOne(x => x.Shelf).WithMany().HasForeignKey(x => x.ShelfId).IsRequired();
 
-     
+
 
 
 
 
         }
+
+
+
 
     }
 }

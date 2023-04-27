@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace BookStore.Application.Persistence
 {
-    public interface  IBookRepository : IRepository<Book>
+    public interface IBookRepository : IRepository<Book>
     {
+       Task< IEnumerable<Book>> GetAvailableBooks();
     }
 }

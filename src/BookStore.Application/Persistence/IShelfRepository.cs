@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace BookStore.Application.Persistence
 {
-    public interface IShelfRepository: IRepository<Shelf>
+    public interface IShelfRepository : IRepository<Shelf>
     {
+       Task< IEnumerable<Shelf>> GetShelvesByRack(int rackId);
     }
 }
