@@ -1,20 +1,19 @@
 ﻿using BookStore.Domin.Entity;
 using Microsoft.EntityFrameworkCore;
-
-
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BookStore.Infrastructrue.Presistince
 {
     public class BookDbContext : DbContext
     {
 
-       
+
         public BookDbContext(DbContextOptions<BookDbContext> options) : base(options)
         {
 
         }
 
-        
+
 
         public DbSet<Book> Books { get; set; }
 
@@ -31,13 +30,12 @@ namespace BookStore.Infrastructrue.Presistince
             modelBuilder.Entity<Book>().HasOne(x => x.Shelf).WithMany().HasForeignKey(x => x.ShelfId).IsRequired();
 
 
+            
+            
+           
 
 
-
-
-        }
-
-
+            }
 
 
     }

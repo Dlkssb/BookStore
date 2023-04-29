@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Racks] (
+    [Id]   INT IDENTITY (1, 1) NOT NULL,
+    [Code] INT NOT NULL,
+    CONSTRAINT [PK_Racks] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+

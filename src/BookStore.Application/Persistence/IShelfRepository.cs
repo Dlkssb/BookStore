@@ -9,6 +9,6 @@ namespace BookStore.Application.Persistence
 {
     public interface IShelfRepository : IRepository<Shelf>
     {
-       Task< IEnumerable<Shelf>> GetShelvesByRack(int rackId);
+        Task<List<Shelf>> GetShelvesByRack(int rackId);
     }
 }

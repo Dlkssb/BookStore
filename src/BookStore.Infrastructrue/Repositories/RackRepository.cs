@@ -1,6 +1,7 @@
 ﻿using BookStore.Application.Persistence;
 using BookStore.Domin.Entity;
 using BookStore.Infrastructrue.Presistince;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,9 @@ namespace BookStore.Infrastructrue.Repositories
         {
         }
 
-        public async Task<IEnumerable<Rack>> GetRacksByShelf(int Code)
+        public async Task<List<Rack>> GetRacksByShelf(int Code)
         {
-            return _dbSet.Where(r => r.Code == Code);
+            return await _dbSet.Where(r => r.Code == Code).ToListAsync();
         }
     }
 }

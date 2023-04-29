@@ -17,8 +17,4 @@
     <ProjectReference Include="..\BookStore.Domin\BookStore.Domin.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Persistence\Interfaces\" />
-  </ItemGroup>
-
 </Project>

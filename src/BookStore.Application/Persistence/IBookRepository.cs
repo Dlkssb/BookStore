@@ -9,6 +9,6 @@ namespace BookStore.Application.Persistence
 {
     public interface IBookRepository : IRepository<Book>
     {
-       Task< IEnumerable<Book>> GetAvailableBooks();
+        Task<List<Book>> GetAvailableBooks();
     }
 }
